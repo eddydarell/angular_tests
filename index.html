@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html ng-app="Store">
+<head>
+    <title>AngularJS Uppgifter</title>
+	<meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="Index.html" class="navbar-brand">AngularJS Uppgifter</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#u1">1</a></li>
+                    <li><a href="#u2">2</a></li>
+                    <li><a href="#u3">3</a></li>
+                    <li><a href="#u4">4</a></li>
+                    <li><a href="#u5">5</a></li>
+                    <li><a href="#u6">6</a></li>
+                    <li><a href="#u7">7</a></li>
+                    <li><a href="#u8">8</a></li>
+                    <li><a href="#u9">9</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-menu">
+        <h5>Upggifter</h5>
+        <ul class="list-group sidebar">
+            <li class="list-group-item"><a href="#u1" class="btn btn-default">1</a></li>
+            <li class="list-group-item"><a href="#u2" class="btn btn-default">2</a></li>
+            <li class="list-group-item"><a href="#u3" class="btn btn-default">3</a></li>
+            <li class="list-group-item"><a href="#u4" class="btn btn-default">4</a></li>
+            <li class="list-group-item"><a href="#u5" class="btn btn-default">5</a></li>
+            <li class="list-group-item"><a href="#u6" class="btn btn-default">6</a></li>
+            <li class="list-group-item"><a href="#u7" class="btn btn-default">7</a></li>
+            <li class="list-group-item"><a href="#u8" class="btn btn-default">8</a></li>
+            <li class="list-group-item"><a href="#u9" class="btn btn-default">9</a></li>
+        </ul>
+    </div>
+    <div class="container container-fluid">
+        <h1 class="text-center panel"><a href="#" name="u1">Uppgift 1</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="StoreController">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 1</h4>
+                        </div>
+                        <div class="panel-body">
+                            <h2>Product 1</h2>
+                            <ul>
+                                <li>{{ Item.Name }}</li>
+                                <li>{{ Item.Price }}</li>
+                                <li>{{ Item.Description }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+var u1 = angular.module("Store", []);
+u1.controller("StoreController", function ($scope) {
+    $scope.Item = {
+        Name: "Milk",
+        Price: 15,
+        Description: "A fresh brick of Milk"
+    };
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h1 class="text-center panel"><a href="#" name="u2">Uppgift 2</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="u2Controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 2</h4>
+                        </div>
+                        <div class="panel-body">
+                            <h3>Text to toggle</h3>
+                            <p ng-show="visibility">
+                                Haec subinde Constantius audiens et quaedam referente Thalassio doctus, quem eum odisse iam conpererat lege communi, scribens ad Caesarem blandius adiumenta paulatim illi subtraxit, sollicitari se simulans ne, uti est militare otium fere tumultuosum, in eius perniciem conspiraret, solisque scholis iussit esse contentum palatinis et protectorum cum Scutariis et Gentilibus, et mandabat Domitiano, ex comite largitionum, praefecto ut cum in Syriam venerit, Gallum, quem crebro acciverat, ad Italiam properare blande hortaretur et verecunde.
+                            </p>
+                            <hr />
+                            <button class="btn btn-primary" ng-click="toggleVisibility()">Toggle visibility</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+u1.controller("u2Controller", function ($scope) {
+    $scope.visibility = "On";
+    $scope.testVisibility = false;
+    $scope.toggleVisibility = function () {
+        if ($scope.testVisibility)
+        {
+            $scope.testVisibility = false;
+            $scope.visibility = "On";
+        }
+        else
+        {
+            $scope.testVisibility = true;
+            $scope.visibility = undefined;
+        }
+    };
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h1 class="text-center panel"><a href="#" name="u3">Uppgift 3</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="u3Controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 3</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label>Write Something</label>
+                                <input type="text" class="form-control" ng-model="textField" />
+                            </div>
+                            <h1 ng-bind="textField"></h1>
+                            <h2>{{ doReverse() }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+u1.controller("u3Controller", function ($scope) {
+    $scope.textField = "";
+    $scope.doReverse = function () {
+        return $scope.textField.split("").reverse().join("");
+    };
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h1 class="text-center panel"><a href="#" name="u4">Uppgift 4</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="u4Controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 4</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li role="presentation" ng-class="classHome"><a href="" ng-click="home()">Home</a></li>
+                                    <li role="presentation" ng-class="classProfile"><a href="" ng-click="profile()">Profile</a></li>
+                                    <li role="presentation" ng-class="classMessages"><a href="" ng-click="messages()">Messages</a></li>
+                                </ul>
+                                <div id="home" ng-show="hVisibility">
+                                    <h4>{{pageName}}</h4>
+                                    <p>You are on the <h2>{{pageName}}</h2> page</p>
+                                    <p class="text-center">1</p>
+                                </div>
+                                <div id="profiles" ng-show="pVisibility">
+                                    <h4>{{pageName}}</h4>
+                                    <p>You are on the <h2>{{pageName}}</h2> page</p>
+                                    <p class="text-center">2</p>
+                                </div>
+                                <div id="messages" ng-show="mVisibility">
+                                    <h4>{{pageName}}</h4>
+                                    <p>You are on the <h2>{{pageName}}</h2> page</p>
+                                    <p class="text-center">3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+u1.controller("u4Controller", function ($scope) {
+    $scope.pageName = "";
+    $scope.classHome = "";
+    $scope.classProfile = "";
+    $scope.classMessages = "";
+    $scope.hVisibility = undefined;
+    $scope.pVisibility = undefined;
+    $scope.mVisibility = undefined;
+    $scope.home = function () {
+        $scope.pageName = "Home";
+        $scope.classHome = "active";
+        $scope.classProfile = "";
+        $scope.classMessages = "";
+        $scope.hVisibility = "On";
+        $scope.pVisibility = undefined;
+        $scope.mVisibility = undefined;
+    };
+    $scope.profile = function () {
+        $scope.pageName = "Profile";
+        $scope.classHome = "";
+        $scope.classProfile = "active";
+        $scope.classMessages = "";
+        $scope.hVisibility = undefined;
+        $scope.pVisibility = "On";
+        $scope.mVisibility = undefined;
+    };
+    $scope.messages = function () {
+        $scope.pageName = "Messages";
+        $scope.classHome = "";
+        $scope.classProfile = "";
+        $scope.classMessages = "active";
+        $scope.hVisibility = undefined;
+        $scope.pVisibility = undefined;
+        $scope.mVisibility = "On";
+    };
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h1 class="text-center panel"><a href="#" name="u5">Uppgift 5</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="u5Controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 5</h4>
+                        </div>
+                        <div class="panel-body">
+                            <h1 class="text-center"><span ng-bind="sec"></span> : <span ng-bind="millisec"></span></h1>
+                            <hr />
+                            <div class="btn-toolbar">
+                                <button class="btn btn-success" ng-click="start()">Start</button>
+                                <button class="btn btn-danger" ng-click="stop()">Stop</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+u1.controller("u5Controller", function ($scope) {
+    $scope.sec = 10;
+    $scope.millisec = 100;
+    $scope.timer;
+    $scope.start = function () {
+        $scope.timer = setInterval(function () {
+            $scope.millisec--;
+            if ($scope.millisec <= 0) {
+            $scope.sec--;
+            $scope.millisec = 100;
+            }
+            if ($scope.sec <= 0) {
+            $scope.sec = 10;
+            $scope.millisec = 100;
+            }
+            $scope.$apply();
+        }, 10);
+    };
+    $scope.stop = function () {
+        clearInterval($scope.timer);
+    }
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h1 class="text-center panel"><a href="#" name="u6">Uppgift 6</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="u6Controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 6</h4>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item"><button class="btn btn-primary btn-sm" ng-click="increment()">Click Me!</button> <span class="badge">{{counter}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+u1.controller("u6Controller", function ($scope) {
+    $scope.counter = 0;
+    $scope.increment = function () {
+    $scope.counter++;
+    };
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h1 class="text-center panel"><a href="#" name="u7">Uppgift 7</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="u7Controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 7</h4>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr ng-repeat="number in numbers">
+                                        <td>{{ number }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+u1.controller("u7Controller", function ($scope) {
+    $scope.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h1 class="text-center panel"><a href="#" name="u8">Uppgift 8</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="u8Controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 8</h4>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th ng-show="description">Description</th>
+                                </tr>
+                                <tr ng-repeat="item in items" ng-mouseover="hover()" ng-mouseleave="leave()">
+                                    <td>{{ item.Name }}</td>
+                                    <td>{{ item.Price }}</td>
+                                    <td ng-show="description">{{ item.Description }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+u1.controller("u8Controller", function ($scope) {
+    $scope.item1 = {
+        Name: "Bread",
+        Price: 15,
+        Description: "A good loaf of bread"
+    };
+    $scope.item2 = {
+        Name: "Milk",
+        Price: 22,
+        Description: "Fresh milk"
+    };
+    $scope.item3 = {
+        Name: "Candy",
+        Price: 9,
+        Description: "A bag of candy"
+    };
+    $scope.item4 = {
+        Name: "Eggs",
+        Price: 45,
+        Description: "A 24 pack eggs"
+    };
+    $scope.item5 = {
+        Name: "Beer",
+        Price: 60,
+        Description: "Unnecessarily expensive beer"
+    };
+    $scope.items = [$scope.item1, $scope.item2, $scope.item3, $scope.item4, $scope.item5];
+    $scope.description = undefined;
+    $scope.hover = function () {
+        $scope.description = 1;
+    };
+    $scope.leave = function () {
+        $scope.description = undefined;
+    };
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h1 class="text-center panel"><a href="#" name="u9">Uppgift 9</a></h1>
+        <div class="row">
+            <div class="col-lg-4">
+                <div ng-controller="u9Controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4>Uppgift 9</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label>Count Till</label>
+                                <input autofocus class="form-control" type="number" min="1" name="countTill" ng-model="countTill" required /><br>
+
+                                <label>First divider</label>
+                                <input class="form-control" type="number" min="1" name="first" ng-model="first" required /><br>
+
+                                <label>Second divider</label>
+                                <input class="form-control" type="number" min="1" name="second" ng-model="second" required />
+                                <hr />
+                                <button type="button" class="btn btn-primary" ng-click="fizzBuzz()">Fizz-The-Buzz</button>
+                            </div>
+                            <hr />
+                            <div class="scrollable">
+                                <ul class="list-group" id="list" ng-model="list">
+                                    <li class="list-group-item" ng-repeat="number in numbers"> {{ number.n }} <span class="badge">{{ number.t }}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h4>JS code snippet</h4>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="code-snippet">
+u1.controller("u9Controller", function ($scope) {
+    $scope.countTill;
+    $scope.first;
+    $scope.second;
+    $scope.numbers = [];
+    var list = angular.element(document.querySelector('#list'));
+    var number;
+    $scope.fizzBuzz = function () {
+        angular.forEach(angular.element('.tagClass'), function (value, key) {
+        $(this).remove();
+        var data = angular.element(value);
+    });
+    if ($scope.first > $scope.second) {
+        $scope.temp = $scope.second;
+        $scope.second = $scope.first;
+        $scope.first = $scope.temp;
+    }
+    for (var i = 1; i < $scope.countTill+1; i++) {
+        if (i % $scope.second === 0 && i % $scope.first === 0) {
+            number = { n: i, t: 'FizzBuzz' };
+        }
+        else if (i % $scope.second === 0) {
+            number = { n: i, t: 'Buzz' };
+        }
+        else if (i % $scope.first === 0) {
+            number = { n: i, t: 'Fizz' };
+        }
+        else {
+            number = { n: i, t: '' };
+        }
+        $scope.numbers.push(number);
+        }
+    };
+});
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <footer>
+            <p>Copyright &copy; Eddy Ntambwe - AngularJS Uppgifter</p>
+        </footer>
+    </div>
+</body>
+</html>

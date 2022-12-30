@@ -1,0 +1,30 @@
+﻿body {
+    margin-top:70px;
+    margin-left :35px;
+}
+
+.fixed-menu{
+    width: 50px;
+    position:fixed;
+    max-width:40px;
+    top:20%;
+    left: 5px;
+}
+
+.scrollable{
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.sidebar > li{
+    padding:0px;
+}
+
+.sidebar > li > a{
+    /*margin-left: -13px;*/
+}
+
+.sidebar > li > a:hover{
+    background-color: white;
+    font-weight: bold;
+} 
